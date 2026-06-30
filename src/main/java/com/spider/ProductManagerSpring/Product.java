@@ -1,12 +1,22 @@
 package com.spider.ProductManagerSpring;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String name;
     private String type;
     private String brand;
     private int warranty;
 
-    public Product( String name, String type, String brand, int warranty) {
+    public Product(int id, String name, String type, String brand, int warranty) {
+        this.id = id;
         this.name = name;
         this.type = type;
         this.brand = brand;
@@ -15,6 +25,14 @@ public class Product {
 
     public Product() {
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -52,7 +70,8 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", brand='" + brand + '\'' +
                 ", warranty=" + warranty +

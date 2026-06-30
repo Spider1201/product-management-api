@@ -16,10 +16,10 @@ public class ProductManagerSpringApplication {
 //		service.show();
 
 
-//		List<Product> products = service.getAllProducts();
-//		for(Product p : products){
-//			System.out.println(p);
-//		}
+		List<Product> products = service.getAllProducts();
+		for(Product p : products){
+			System.out.println(p);
+		}
 
 	}
 }

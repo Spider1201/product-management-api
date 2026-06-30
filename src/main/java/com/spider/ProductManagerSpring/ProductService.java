@@ -1,20 +1,18 @@
 package com.spider.ProductManagerSpring;
 
-import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component
 public class ProductService{
 
-    public void show(){
-        System.out.println("in show");
-    }
+    @Autowired
+    ProductRepo db;
 
-//    public void addProduct(Product p){
-//        db.save(p);
-//    }
-//
     public List<Product> getAllProducts() {
-        return db.getAll();
+        return db.findAll();
     }
 
 //    public Product getProduct(String name) {
