@@ -17,13 +17,11 @@ public class ProductService {
         return db.findAll();
     }
 
-//    public Product getProduct(String name) {
-//        for(Product p : products){
-//            if(p.getName().equals(name)){
-//                return p;
-//            }
-//
-//        }
-//        return null;
-//    }
+    public Product getProduct(String name) {
+        return db.findByName(name);
+    }
+
+    public void addProduct(Product p) {
+        db.save(p);
+    }
 }
